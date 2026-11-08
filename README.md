@@ -58,7 +58,3 @@ Register devices with automatic sending before trying these scenarios. For custo
 Each message starts with a 52-bit header: message type (3 bits), sensor profile (2), Unix timestamp (32), battery flag (1) and token (14). Data messages add profile-specific readings and a 32-bit CRC. Messages are padded to whole bytes.
 
 Message types: `REGISTRATION`, `TOKEN`, `DATA`, `INVALID_TOKEN`, `ACK`, `RETRY`, `ACTIVITY_CHECK`. Sensor fields and ranges are defined in `tester/info.py`. CRC32 covers the canonical reading text, not the full header.
-
-## Notes
-
-Originally developed as a university networking project. Readings are synthetic and no physical sensors are required. Tokens are plaintext identifiers, not secure authentication. The implementation supports one device per sensor profile and does not provide encryption, duplicate suppression or production-grade handling of untrusted packets.
